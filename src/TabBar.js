@@ -96,6 +96,7 @@ type Props = SceneRendererProps & {
   tabStyle?: any;
   indicatorStyle?: any;
   labelStyle?: any;
+  scrollStyle?: any;
   style?: any;
 }
 
@@ -118,6 +119,7 @@ export default class TabBar extends PureComponent<DefaultProps, Props, State> {
     tabStyle: View.propTypes.style,
     indicatorStyle: View.propTypes.style,
     labelStyle: Text.propTypes.style,
+    scrollStyle: View.propTypes.style,
     style: PropTypes.any,
   };
 
@@ -375,7 +377,7 @@ export default class TabBar extends PureComponent<DefaultProps, Props, State> {
             width: new Animated.Value(finalTabWidth),
           })}
         </Animated.View>
-        <View style={styles.scroll}>
+        <View style={[styles.scroll, this.props.scrollStyle]}>
           <ScrollView
             horizontal
             scrollEnabled={scrollEnabled}
