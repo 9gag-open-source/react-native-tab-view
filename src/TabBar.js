@@ -463,8 +463,8 @@ export default class TabBar extends PureComponent<DefaultProps, Props, State> {
                       {icon}
                       {label}
                     </Animated.View>
-                    {badge ?
-                      <Animated.View style={[ styles.badge, { opacity: this.state.visibility } ]}>
+                    {badge && this.state.visibility ?
+                      <Animated.View style={[ styles.badge ]}>
                         {badge}
                       </Animated.View> : null
                     }
